@@ -39,4 +39,6 @@ jobs:
       run: npm install -g surge
       
     - name: Deploy to Surge
-      run: surge ./build sqr-project-front.surge.sh --token ${{secrets.SURGE_TOKEN}}
+      run: |
+        surge ./build sqr-project-front.surge.sh --token ${{secrets.SURGE_TOKEN}}
+        surge --domain https://sqr-project-front.surge.sh
