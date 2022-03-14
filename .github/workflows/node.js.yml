@@ -32,6 +32,9 @@ jobs:
       env:
         CI: false
         
+    - name: Install Firebase
+      run: npm install --save firebase
+        
     - name: Install Surge
       run: npm install -g surge
       
