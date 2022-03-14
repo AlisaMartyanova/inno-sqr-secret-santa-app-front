@@ -31,10 +31,9 @@ jobs:
       run: npm run build --if-present
       env:
         CI: false
+        
+    - name: Install Surge
+      run: npm install -g surge
       
     - name: Deploy
-      uses: akhileshns/heroku-deploy@v3.4.6
-      with:
-        heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-        heroku_app_name: ${{secrets.HEROKU_APP_NAME}}
-        heroku_email: ${{secrets.HEROKU_EMAIL}}
+      run: surge ./build sqr-project-front.surge.sh --token ${{secrets.SURGE_TOKEN}}
