@@ -6,7 +6,7 @@ from selenium.webdriver.common.by import By
 from time import sleep
 
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
-driver.get("http://localhost:3000/")
+driver.get("https://sqr-project-front.surge.sh/")
 # driver.get("https://www.google.com/")
 sleep(2)
 
